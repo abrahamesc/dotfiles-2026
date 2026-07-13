@@ -1,0 +1,5 @@
+require("abe.plugins.gruvbox")
+require("abe.plugins.oil")
+require("abe.plugins.obsidian")
+require("abe.plugins.misc")
+require("abe.plugins.telescope")
