@@ -28,7 +28,7 @@ hl.on("hyprland.start", function ()
 
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("dunst")
-    hl.exec_cmd("waybar")
+    hl.exec_cmd("noctalia")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
 end)
@@ -300,6 +300,11 @@ hl.device({
     kb_options = "caps:swapescape"
 })
 
+hl.device({
+    name        = "obins-obins-annepro2",
+    kb_layout = "us",
+    kb_options = "caps:swapescape"
+})
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
@@ -412,3 +417,7 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
