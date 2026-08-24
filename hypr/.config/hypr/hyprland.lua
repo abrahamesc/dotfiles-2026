@@ -58,7 +58,7 @@ end)
 -- Default monitor config
 
 hl.monitor({
-    output = "DP-3",
+    output = "eDP-1",
     mode = "preferred",
     scale = 1.0
 })
