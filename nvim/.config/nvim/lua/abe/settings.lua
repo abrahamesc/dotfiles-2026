@@ -11,3 +11,4 @@ vim.o.ignorecase = true
 vim.o.background = 'dark'
 vim.o.conceallevel = 1
 vim.o.scrolloff = 999
+vim.o.clipboard = "unnamedplus"

@@ -38,9 +38,8 @@ hl.on("monitor.added", function(monitor)
     if monitor.name == "DP-3" then
         hl.monitor({ output = "eDP-1", disabled = true})
         hl.monitor({ output = "DP-3", disabled = false, mode = "preferred", scale = 1.25})
-        hl.notification.create({ text = "Hit the DP-3 monitor.added block", timeout = 7000, icon = "ok"})
-        hl.dispatch(hl.dsp.focus({ monitor = 1}))
-        hl.dispatch(hl.dsp.focus({ workspace = 1}))
+        hl.dispatch(hl.dsp.workspace.move({workpace = 1, monitor = 1}))
+        hl.dispatch(hl.dsp.focus({ workspace = 1, true}))
     end
 
 end)
@@ -50,6 +49,8 @@ hl.on("monitor.removed", function(monitor)
 
     if monitor.name == "DP-3" then
         hl.monitor({ output = "eDP-1", disabled = false, mode = "preferred", scale=1})
+        hl.dispatch(hl.dsp.workspace.move({workpace = 1, monitor = 'eDP-1'}))
+        hl.dispatch(hl.dsp.focus({ workspace = 1, 0}))
 
     end
 end)
@@ -68,10 +69,9 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "kitty"
-local fileManager = "dolphin"
-local menu        = "wofi --show drun"
-local browser     = "firefox"
+local terminal    = "uwsm app -- kitty"
+local fileManager = "uwsm app -- dolphin"
+local browser     = "uwsm app -- firefox"
 
 
 -------------------
@@ -433,5 +433,3 @@ hl.window_rule({
 })
 
 
--- For Noctalia Color templates
-require("noctalia").apply_theme()
