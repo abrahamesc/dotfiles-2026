@@ -71,7 +71,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "uwsm app -- kitty"
 local fileManager = "uwsm app -- dolphin"
-local browser     = "uwsm app -- firefox"
+local browser     = "uwsm app -t service -- firefox.desktop"
 
 
 -------------------
@@ -350,7 +350,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 local ipc = "noctalia msg "
 -- Core binds
 hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. "+C", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
